@@ -10,37 +10,58 @@
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
-
+    const p = document.querySelector('p');
     function makeGreen() {
-      const p = document.querySelector('p');
       p.style.color = '#BADA55';
       p.style.fontSize = '50px';
     }
 
     // Regular
-
+    console.log('herro');
     // Interpolated
-
+    console.log('Herro i am a %s string', 'MEME');
     // Styled
-
+    console.log("%c i am a big text wow", 'background: #B4D; color: #f5f5f5')
     // warning!
-
+    console.warn('shit')
     // Error :|
+    console.error('big shit')
 
     // Info
-
+    console.info('Cats lose almost as much fluid from licking themselves as they do from urination')
     // Testing
-
+    console.assert(1 === 2, 'are you dumb')
     // clearing
-
     // Viewing DOM Elements
-
+    console.dir(p)
     // Grouping together
+    dogs.forEach( dog => {
+      console.group(`${dog.name}`)
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age}`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd()
 
+    })
     // counting
+    console.count('Wow')
+    console.count('Me')
+    console.count('Me')
+    console.count('Me')
+    console.count('Wow')
+    console.count('Wow')
+    console.count('Me')
+    console.count('Wow')
 
     // timing
+    console.time('fetching NECESSARY DATA!!!')
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data =>{
+        console.timeEnd('fetched NECESARY DATA!!!')
+        console.log(data)
 
+      })
   </script>
 </body>
 </html>
