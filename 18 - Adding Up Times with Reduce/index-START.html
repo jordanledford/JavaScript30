@@ -190,14 +190,18 @@ const seconds = timeNodes
       .map(parseFloat);
     return (mins * 60) + secs;
   })
-  .reduce((total, vidSeconds) => total + vidSeconds)
+  .reduce((total, vidSeconds) => total + vidSeconds);
+
   let secondsLeft = seconds;
   const hours = Math.floor(secondsLeft / 3600);
   secondsleft = secondsLeft % 3600;
 
   const mins = Math.floor(secondsLeft / 60);
   secondsLeft = secondsLeft % 60;
+  
   console.log(hours, mins, secondsLeft);
+
+
 </script>
 </body>
 </html>
